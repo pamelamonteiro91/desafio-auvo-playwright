@@ -1,0 +1,12 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Playwright
+playwright-report/
+test-results/
+
+# Sistema
+.DS_Store
+.env

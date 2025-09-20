@@ -1,0 +1,15 @@
+{
+  "name": "desafio-auvo-qa",
+  "version": "1.0.0",
+  "description": "POC de automação de testes com Playwright para o desafio Auvo",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^24.5.2",
+    "typescript": "^5.2.0"
+  }
+}
