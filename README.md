@@ -32,7 +32,7 @@ DESAFIO-AUVO-QA/
 │   ├── checkout-spec.ts
 │   ├── multi-cart.spec.ts
 │   ├── remove-cart-spec.ts
-│   └── multi-user-checkout.spec.ts
+│   
 ├── test-results/        # Evidências dos testes (relatórios, screenshots, vídeos)
 ├── test-data.ts         # Dados de teste (opcional)
 ├── playwright.config.ts # Configuração do Playwright
@@ -69,13 +69,26 @@ npx playwright test
 Executar testes específicos
 npx playwright test tests/nome-do-teste.spec.ts --headed --debug
 
-Estrutura dos testes
+### Rodando os testes em modo debug
 
-LoginTest – Valida login com usuário padrão.
+Para executar os testes com o Playwright em modo debug (abrindo o Inspector e permitindo depuração passo a passo), use o seguinte comando no terminal dentro da pasta do projeto:
 
-ProductSearchTest – Pesquisa produtos e valida títulos, preços e descrições.
+```bash
+npx playwright test --debug
 
-CartAndCheckoutTest – Adiciona produtos ao carrinho, realiza checkout e finaliza pedido.
+Rodar um teste específico:
+
+npx playwright test caminho/do/arquivo.spec.ts --debug
+
+Visualizar o relatório HTML
+
+npx playwright show-report test-results
+O relatório será aberto automaticamente no navegador padrão.
+
+Abrir o navegador em modo visível (não headless):
+
+npx playwright test --headed
+
 
 📸 Evidências de Testes
 
@@ -88,26 +101,6 @@ Durante a execução, capturas de tela são geradas automaticamente na pasta "sc
 3. Carrinho vazio após remoção de produtos
 
 4. Checkout finalizado
-
-📊 Evidências dos Testes Automatizados
-Este projeto está configurado para gerar evidências automáticas de cada execução de teste, facilitando a análise de falhas e validação dos cenários.
-Tipos de evidências geradas
-- 📸 Screenshots: capturados automaticamente em caso de falha
-- 🎥 Vídeos: gravados apenas quando um teste falha
-- 📄 Relatório HTML: mostra o status de cada teste, tempo de execução e links para evidências
-
-Visualizar o relatório HTML
-
-npx playwright show-report test-results
-O relatório será aberto automaticamente no navegador padrão.
-
-Estrutura da pasta test-results/
-test-results/
-├── index.html               # Relatório interativo
-├── <nome-do-teste>/        # Pasta com evidências por teste
-│   ├── trace.zip            # Trace interativo
-│   ├── video.webm           # Vídeo do teste (se falhou)
-│   └── screenshot.png       # Captura de tela (se falhou)
 
 Limpar evidências antigas (opcional)
 rm -rf test-results -- LINUX 
@@ -136,28 +129,10 @@ Os testes cobrem todos os passos descritos no desafio: login, pesquisa, validaç
 📦 Entrega
 
 O código está publicado em repositório público no GitHub:
-Link para o repositório
+https://github.com/pamelamonteiro91/desafio-auvo-playwright
 
-📷 Evidências Visuais dos Testes
-Abaixo estão capturas de tela geradas automaticamente durante a execução dos testes com Playwright. Elas ilustram os principais pontos do fluxo de testes:
 
-✅ Login realizado com sucesso
-Login realizado com sucesso
 
-🛒 Produto adicionado ao carrinho
-Produto no carrinho
-
-📦 Detalhes do produto validados
-Detalhes do produto
-
-🧾 Listagem de produtos após login
-Listagem de produtos
-
-🧹 Carrinho vazio após remoção de produtos
-Carrinho vazio
-
-🎉 Pedido finalizado com sucesso
-Pedido finalizado
 
 
 
